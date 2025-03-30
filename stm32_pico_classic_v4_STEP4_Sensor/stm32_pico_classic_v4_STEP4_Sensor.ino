@@ -12,9 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//#include "HardwareTimer.h"
 HardwareTimer *Timer7 = new HardwareTimer(TIM7);
-HardwareSerial Serial1(PA10,PA9);//STm32G4のdefaultのSerialはLP1になっている
 
 #define SLED_FR PC14
 #define SLED_FL PC15
@@ -38,39 +36,27 @@ void sensorInterrupt(void) {
   switch (cnt) {
     case 0:
       digitalWrite(SLED_FR, HIGH);  //LED点灯
-      for (int i = 0; i < 300; i++) {
-        asm("nop \n");
-      }
-      g_sensor_value_fr = analogRead(AD_RIGHT_F);
+      g_sensor_value_fr=RTanalogRead(AD_RIGHT_F);
       digitalWrite(SLED_FR, LOW);  //LED消灯
       break;
     case 1:
       digitalWrite(SLED_FL, HIGH);  //LED点灯
-      for (int i = 0; i < 300; i++) {
-        asm("nop \n");
-      }
-      g_sensor_value_fl = analogRead(AD_LEFT_F);
+      g_sensor_value_fl = RTanalogRead(AD_LEFT_F);
       digitalWrite(SLED_FL, LOW);  //LED消灯
       break;
     case 2:
       digitalWrite(SLED_R, HIGH);  //LED点灯
-      for (int i = 0; i < 300; i++) {
-        asm("nop \n");
-      }
-      g_sensor_value_r = analogRead(AD_RIGHT_S);
+      g_sensor_value_r = RTanalogRead(AD_RIGHT_S);
       digitalWrite(SLED_R, LOW);  //LED消灯
       break;
     case 3:
       digitalWrite(SLED_L, HIGH);  //LED点灯
-      for (int i = 0; i < 300; i++) {
-        asm("nop \n");
-      }
-      g_sensor_value_l = analogRead(AD_LEFT_S);
+      g_sensor_value_l = RTanalogRead(AD_LEFT_S);
       digitalWrite(SLED_L, LOW);  //LED消灯
-      g_battery_value = (double)analogReadMilliVolts(AD_VDD) / 10.0 * (10.0 + 51.0);
+      g_battery_value = (float)RTanalogRead(AD_VDD) / 4095.0 * 3300.0 / 10.0 * (10.0 + 51.0);
       break;
     default:
-      Serial1.printf("error¥n¥r");
+      Serial.printf("error¥n¥r");
       break;
   }
   cnt++;
@@ -89,21 +75,23 @@ void setup() {
   digitalWrite(SLED_R, LOW);
   digitalWrite(SLED_L, LOW);
 
-  Serial1.begin(115200);
+  Serial.begin(115200);
 
   Timer7->pause();
-  Timer7->setOverflow(250,MICROSEC_FORMAT);
+  Timer7->setOverflow(250, MICROSEC_FORMAT);
   Timer7->attachInterrupt(sensorInterrupt);
   Timer7->refresh();
   Timer7->resume();  //Timter Start
+
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  Serial1.printf("r_sen  is %d\n\r", g_sensor_value_r);
-  Serial1.printf("fr_sen is %d\n\r", g_sensor_value_fr);
-  Serial1.printf("fl_sen is %d\n\r", g_sensor_value_fl);
-  Serial1.printf("l_sen  is %d\n\r", g_sensor_value_l);
-  Serial1.printf("VDD    is %d\n\r", g_battery_value);
+
+  Serial.printf("r_sen  is %d\n\r", g_sensor_value_r);
+  Serial.printf("fr_sen is %d\n\r", g_sensor_value_fr);
+  Serial.printf("fl_sen is %d\n\r", g_sensor_value_fl);
+  Serial.printf("l_sen  is %d\n\r", g_sensor_value_l);
+  Serial.printf("VDD    is %d\n\r", g_battery_value);
   delay(100);
 }

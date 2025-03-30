@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#define LED0 PA4
-#define LED1 PA6
-#define LED2 PB1
-#define LED3 PB10
+#define LED0 PB10
+#define LED1 PB1
+#define LED2 PA6
+#define LED3 PA4
 
 #define SW_L PC8
 #define SW_C PC9
@@ -65,11 +65,13 @@ void modeExec(char mode) {
       break;
     case 2:
       analogWriteFrequency(FREQ_D);
+      analogWrite(BUZZER, 127);      
       delay(1000);
       analogWrite(BUZZER, 255);
       break;
     case 3:
       analogWriteFrequency(FREQ_E);
+      analogWrite(BUZZER, 127);
       delay(1000);
       analogWrite(BUZZER, 255);
       break;
