@@ -20,6 +20,24 @@ void sensorInterrupt(void) {
   g_sensor.interrupt();
 }
 
+SENSOR::SENSOR()
+{
+	sen_r.ref = REF_SEN_R;
+	sen_l.ref = REF_SEN_L;
+
+	sen_r.th_wall = TH_SEN_R;
+	sen_l.th_wall = TH_SEN_L;
+
+	sen_fr.th_wall = TH_SEN_FR;
+	sen_fl.th_wall = TH_SEN_FL;
+
+	sen_r.th_control = CONTH_SEN_R;
+	sen_l.th_control = CONTH_SEN_L;
+
+
+}
+
+
 void SENSOR::interrupt(void) 
 {
   static char cnt = 0;

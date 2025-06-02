@@ -18,6 +18,7 @@
 
 class SEARCH {
 public:
+
 	void lefthand(void);
 	void adachi(char gx, char gy);
 private:

@@ -90,29 +90,29 @@ void MISC::modeExec(int mode)
       break;
     case 2:  //足立法
       g_map.positionInit();
-      g_search.adachi(GOAL_X, GOAL_Y);
+      g_search.adachi(g_map.goal_mx, g_map.goal_my);
       g_run.rotate(right, 2);
-      g_map.nextDir(right);
-      g_map.nextDir(right);
+      g_map.rotateDirSet(right);
+      g_map.rotateDirSet(right);
       g_misc.goalAppeal();
       g_search.adachi(0, 0);
       g_run.rotate(right, 2);
-      g_map.nextDir(right);
-      g_map.nextDir(right);
+      g_map.rotateDirSet(right);
+      g_map.rotateDirSet(right);
       mapWrite();
       break;
     case 3:  //最短走行
       mapCopy();
       g_map.positionInit();
-      g_fast.run(GOAL_X, GOAL_Y);
+      g_fast.run(g_map.goal_mx, g_map.goal_my);
       g_run.rotate(right, 2);
-      g_map.nextDir(right);
-      g_map.nextDir(right);
+      g_map.rotateDirSet(right);
+      g_map.rotateDirSet(right);
       g_misc.goalAppeal();
       g_fast.run(0, 0);
       g_run.rotate(right, 2);
-      g_map.nextDir(right);
-      g_map.nextDir(right);
+      g_map.rotateDirSet(right);
+      g_map.rotateDirSet(right);
       break;
     case 4:
       break;

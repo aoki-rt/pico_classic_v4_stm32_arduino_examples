@@ -18,16 +18,19 @@
 #define TIRE_DIAMETER (48.21)
 #define TREAD_WIDTH (69.5)
 
-#define REF_SEN_R 409
-#define REF_SEN_L 585
+#define REF_SEN_R 380
+#define REF_SEN_L 459
 
-#define TH_SEN_R 120
-#define TH_SEN_L 120
-#define TH_SEN_FR 99
-#define TH_SEN_FL 67
+#define TH_SEN_R 69
+#define TH_SEN_L 184
+#define TH_SEN_FR 80
+#define TH_SEN_FL 60
 
-#define GOAL_X 3
-#define GOAL_Y 3
+#define CONTH_SEN_R (TH_SEN_R+10)
+#define CONTH_SEN_L (TH_SEN_L+10)
+
+#define GOAL_X 7
+#define GOAL_Y 7
 
 #define WAITLOOP_SLED 300
 

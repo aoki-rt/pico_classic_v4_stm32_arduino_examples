@@ -33,7 +33,9 @@ void setup() {
   // put your setup code here, to run once:
   deviceInit();
   g_tmc5240.init();
-
+	g_map.goal_mx = GOAL_X;
+	g_map.goal_my = GOAL_Y;
+  
   motorDisable();
   buzzerEnable(INC_FREQ);
   delay(80);

@@ -54,6 +54,8 @@ void SEARCH::adachi(char gx, char gy) {
     case rear:
       g_run.rotate(right, 2);
       break;
+    default:
+      break;
   }
 
   g_run.accelerate(HALF_SECTION, SEARCH_SPEED);
@@ -82,6 +84,8 @@ void SEARCH::adachi(char gx, char gy) {
         g_run.decelerate(HALF_SECTION, SEARCH_SPEED);
         g_run.rotate(right, 2);
         g_run.accelerate(HALF_SECTION, SEARCH_SPEED);
+        break;
+      default:
         break;
     }
 

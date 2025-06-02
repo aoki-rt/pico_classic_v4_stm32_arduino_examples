@@ -24,6 +24,13 @@ RUN g_run;
 RUN::RUN() {
   speed = 0.0;
   accel = 0.0;
+	speed_target_r = 0;
+	speed_target_l = 0;
+	upper_speed_limit = 0;
+	lower_speed_limit = 0;
+	step_lr_len=0;
+	step_lr=0;  
+  con_wall.kp = CON_WALL_KP;
 }
 
 //割り込み
@@ -131,7 +138,7 @@ void RUN::straight(int len, int init_speed, int max_sp, int finish_speed) {
     }
   }
 
-  accel = -1.0 * SEARCH_ACCEL;
+  accel = -1.0 * accel;
 
   while (1) {
     stepGet();
@@ -216,11 +223,11 @@ void RUN::decelerate(int len, int init_speed) {
     }
   }
 
-  accel = -1 * SEARCH_ACCEL;
+  accel = -1 * accel;
 
   while (1) {
     stepGet();
-    speedSet(speed, speed);
+    speedSet(speed_target_l, speed_target_r);
     if (step_lr > obj_step) {
       break;
     }

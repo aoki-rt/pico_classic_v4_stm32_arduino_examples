@@ -36,7 +36,7 @@ void sensorInterrupt(void) {
   switch (cnt) {
     case 0:
       digitalWrite(SLED_FR, HIGH);  //LED点灯
-      g_sensor_value_fr=RTanalogRead(AD_RIGHT_F);
+      g_sensor_value_fr = RTanalogRead(AD_RIGHT_F);
       digitalWrite(SLED_FR, LOW);  //LED消灯
       break;
     case 1:
@@ -82,7 +82,6 @@ void setup() {
   Timer7->attachInterrupt(sensorInterrupt);
   Timer7->refresh();
   Timer7->resume();  //Timter Start
-
 }
 
 void loop() {
