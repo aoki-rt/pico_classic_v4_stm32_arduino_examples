@@ -2,8 +2,8 @@
 ![pico_classic4](images/PiCo_Classic4_image.jpg)
 
 ## 動作環境
-- Arduino IDE v2.3.5
-- Arduino STM32 MCU based boardsESP32 v2.10.1
+- Arduino IDE v2.3.8
+- Arduino STM32 MCU based boardsESP32 v2.12.0
 
 ## サンプルプログラムについて
 ### STEP1 〜 STEP8
@@ -16,7 +16,7 @@
 
 ## License
 
-(C) 2025 RT Corporation
+(C) 2026 RT Corporation
 
 各ファイルはライセンスがファイル中に明記されている場合、そのライセンスに従います。特に明記されていない場合は、Apache License, Version 2.0に基づき公開されています。  
 ライセンスの全文は[LICENSE](./LICENSE)または[https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)から確認できます。
