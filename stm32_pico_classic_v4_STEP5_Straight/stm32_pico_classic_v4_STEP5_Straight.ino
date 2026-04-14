@@ -28,7 +28,7 @@ SPIClass SPI_2(PB15,PB14,PB13);//MOSI,MISO,SCLK,CS(option)
 #define SW_C PC9
 #define SW_R PA8
 
-#define MOTOR_EN PA15
+#define MOTOR_EN PC12
 
 #define SPI_CLK PB13
 #define SPI_MOSI PB15

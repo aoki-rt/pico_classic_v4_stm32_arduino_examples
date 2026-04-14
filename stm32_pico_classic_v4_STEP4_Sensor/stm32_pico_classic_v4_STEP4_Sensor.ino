@@ -19,11 +19,11 @@ HardwareTimer *Timer7 = new HardwareTimer(TIM7);
 #define SLED_R PF0
 #define SLED_L PF1
 
-#define AD_RIGHT_S PA0
-#define AD_LEFT_F PA1
-#define AD_RIGHT_F PA2
-#define AD_VDD PA3
-#define AD_LEFT_S PC3
+#define AD_LEFT_S PC1
+#define AD_RIGHT_S PC2
+#define AD_LEFT_F PC3
+#define AD_RIGHT_F PA0
+#define AD_VDD PA1
 
 volatile short g_sensor_value_fr;
 volatile short g_sensor_value_fl;

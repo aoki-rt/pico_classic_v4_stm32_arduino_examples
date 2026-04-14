@@ -37,13 +37,13 @@
 
 #define BUZZER PB2
 
-#define AD_RIGHT_S PA0
-#define AD_LEFT_F PA1
-#define AD_RIGHT_F PA2
-#define AD_VDD PA3
-#define AD_LEFT_S PC3
+#define AD_LEFT_S PC1
+#define AD_RIGHT_S PC2
+#define AD_LEFT_F PC3
+#define AD_RIGHT_F PA0
+#define AD_VDD PA1
 
-#define MOTOR_EN PA15
+#define MOTOR_EN PC12
 
 #define SPI_CLK PB13
 #define SPI_MOSI PB15
