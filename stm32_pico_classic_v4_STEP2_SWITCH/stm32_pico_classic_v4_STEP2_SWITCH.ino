@@ -34,7 +34,7 @@ void setup() {
   pinMode(SW_C, INPUT_PULLUP);
   pinMode(SW_R, INPUT_PULLUP);
 
-  g_state_r = g_state_c = g_state_l = 0;  
+  g_state_r = g_state_c = g_state_l = 0;
 }
 
 void loop() {

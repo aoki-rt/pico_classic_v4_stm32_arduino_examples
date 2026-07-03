@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,12 +24,12 @@ RUN g_run;
 RUN::RUN() {
   speed = 0.0;
   accel = 0.0;
-	speed_target_r = 0;
-	speed_target_l = 0;
-	upper_speed_limit = 0;
-	lower_speed_limit = 0;
-	step_lr_len=0;
-	step_lr=0;  
+  speed_target_r = 0;
+  speed_target_l = 0;
+  upper_speed_limit = 0;
+  lower_speed_limit = 0;
+  step_lr_len = 0;
+  step_lr = 0;
   con_wall.kp = CON_WALL_KP;
 }
 

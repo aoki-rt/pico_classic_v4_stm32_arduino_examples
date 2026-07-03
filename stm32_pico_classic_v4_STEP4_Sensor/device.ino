@@ -13,7 +13,7 @@
 // limitations under the License.
 
 
-uint16_t RTanalogRead(uint32_t ulPin){
+uint16_t RTanalogRead(uint32_t ulPin) {
   ADC_HandleTypeDef AdcHandle = {};
   ADC_ChannelConfTypeDef AdcChannelConf = {};
   __IO uint16_t uhADCxConvertedValue = 0;

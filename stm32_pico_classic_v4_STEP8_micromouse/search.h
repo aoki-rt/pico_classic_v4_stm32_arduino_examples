@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ public:
 	void lefthand(void);
 	void adachi(char gx, char gy);
 private:
-
 };
 extern SEARCH g_search;
 #endif /* SRC_SEARCH_H_ */

@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -36,15 +36,14 @@ void sensorInterrupt(void) {
 }
 
 
-void SENSOR::interrupt(void) 
-{
+void SENSOR::interrupt(void) {
   static char cnt = 0;
 
   switch (cnt) {
     case 0:
       digitalWrite(SLED_FR, HIGH);  //LED点灯
       sen_fr.value = RTanalogRead(AD_RIGHT_F);
-      digitalWrite(SLED_FR, LOW);  //LED消灯      
+      digitalWrite(SLED_FR, LOW);  //LED消灯
       if (sen_fr.value > sen_fr.th_wall) {
         sen_fr.is_wall = true;
       } else {
@@ -52,7 +51,7 @@ void SENSOR::interrupt(void)
       }
       break;
     case 1:
-      digitalWrite(SLED_FL, HIGH);//LED点灯
+      digitalWrite(SLED_FL, HIGH);  //LED点灯
       sen_fl.value = RTanalogRead(AD_LEFT_F);
       digitalWrite(SLED_FL, LOW);  //LED消灯
       if (sen_fl.value > sen_fl.th_wall) {
@@ -62,7 +61,7 @@ void SENSOR::interrupt(void)
       }
       break;
     case 2:
-      digitalWrite(SLED_R, HIGH);  
+      digitalWrite(SLED_R, HIGH);
       sen_r.value = RTanalogRead(AD_RIGHT_S);
       digitalWrite(SLED_R, LOW);  //LED消灯
       if (sen_r.value > sen_r.th_wall) {
@@ -94,7 +93,7 @@ void SENSOR::interrupt(void)
         sen_l.error = 0;
         sen_l.is_control = false;
       }
-       battery_value = (float)RTanalogRead(AD_VDD) / 4095.0 * 3300.0 / 10.0 * (10.0 + 51.0);
+      battery_value = (float)RTanalogRead(AD_VDD) / 4095.0 * 3300.0 / 10.0 * (10.0 + 51.0);
       break;
     default:
       Serial.printf("sensor state error\n\r");

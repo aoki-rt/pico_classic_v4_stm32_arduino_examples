@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -66,7 +66,7 @@ void RUN::accelerate(int len, int finish_speed) {
   speed = min_speed = MIN_SPEED;
   max_speed = finish_speed;
   counterClear();
-  speedSet(MIN_SPEED,MIN_SPEED);
+  speedSet(MIN_SPEED, MIN_SPEED);
   dirSet(MOT_FORWARD, MOT_FORWARD);
   obj_step = (int)((float)len * 2.0 / PULSE);
 
@@ -86,7 +86,7 @@ void RUN::oneStep(int len, int init_speed) {
   max_speed = init_speed;
   speed = min_speed = init_speed;
   counterClear();
-  speedSet(init_speed,init_speed);   
+  speedSet(init_speed, init_speed);
   dirSet(MOT_FORWARD, MOT_FORWARD);
   obj_step = (int)((float)len * 2.0 / PULSE);
 
@@ -106,7 +106,7 @@ void RUN::decelerate(int len, int init_speed) {
   max_speed = init_speed;
   speed = min_speed = init_speed;
   counterClear();
-  speedSet(init_speed,init_speed);   
+  speedSet(init_speed, init_speed);
   dirSet(MOT_FORWARD, MOT_FORWARD);
   obj_step = (int)((float)len * 2.0 / PULSE);
 

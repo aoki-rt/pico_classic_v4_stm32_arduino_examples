@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -106,13 +106,12 @@ void TMC5240::write(unsigned char add, unsigned int data_l, unsigned int data_r)
   SPI_2.transfer(spi_write_data, 5);
   digitalWrite(SPI_CS_R, HIGH);
   SPI_2.endTransaction();
-
 }
 
 void TMC5240::init(void) {
   SPI_2.begin();
 
-  pinMode(SPI_CS_L, OUTPUT);   //left
+  pinMode(SPI_CS_L, OUTPUT);  //left
   pinMode(SPI_CS_R, OUTPUT);  //right
   pinMode(SPI_CS_J, OUTPUT);
   digitalWrite(SPI_CS_L, HIGH);
@@ -127,6 +126,6 @@ void TMC5240::init(void) {
   g_tmc5240.write(TMC5240_GCONF, 0x00000000, 0x00000010);       //右のみシャフトインバース
   g_tmc5240.write(TMC5240_AMAX, 0x3ffff, 0x3ffff);              //加速度max 17..0 18bit
   g_tmc5240.write(TMC5240_XACTUAL, 0, 0);                       //初期化
-  g_tmc5240.write(TMC5240_VSTART, (unsigned int)(MIN_SPEED / TMC5240_VELOCITY), (unsigned int)(MIN_SPEED / TMC5240_VELOCITY)); 
+  g_tmc5240.write(TMC5240_VSTART, (unsigned int)(MIN_SPEED / TMC5240_VELOCITY), (unsigned int)(MIN_SPEED / TMC5240_VELOCITY));
   g_tmc5240.write(TMC5240_VMAX, 0, 0);
 }

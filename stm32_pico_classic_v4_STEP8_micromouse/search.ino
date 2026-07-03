@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -78,7 +78,7 @@ void SEARCH::adachi(char gx, char gy) {
       case left:
         g_run.decelerate(HALF_SECTION, SEARCH_SPEED);
         g_run.rotate(left, 1);
-        g_run.accelerate(HALF_SECTION,SEARCH_SPEED);
+        g_run.accelerate(HALF_SECTION, SEARCH_SPEED);
         break;
       case rear:
         g_run.decelerate(HALF_SECTION, SEARCH_SPEED);

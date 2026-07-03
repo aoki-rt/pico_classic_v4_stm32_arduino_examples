@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,8 +26,8 @@
 #define TH_SEN_FR 80
 #define TH_SEN_FL 60
 
-#define CONTH_SEN_R (TH_SEN_R+10)
-#define CONTH_SEN_L (TH_SEN_L+10)
+#define CONTH_SEN_R (TH_SEN_R + 10)
+#define CONTH_SEN_L (TH_SEN_L + 10)
 
 #define GOAL_X 7
 #define GOAL_Y 7

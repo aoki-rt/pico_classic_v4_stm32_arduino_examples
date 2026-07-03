@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -33,9 +33,9 @@ void setup() {
   // put your setup code here, to run once:
   deviceInit();
   g_tmc5240.init();
-	g_map.goal_mx = GOAL_X;
-	g_map.goal_my = GOAL_Y;
-  
+  g_map.goal_mx = GOAL_X;
+  g_map.goal_my = GOAL_Y;
+
   motorDisable();
   buzzerEnable(INC_FREQ);
   delay(80);

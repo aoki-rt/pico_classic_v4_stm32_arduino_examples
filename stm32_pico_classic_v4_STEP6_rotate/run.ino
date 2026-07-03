@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -67,8 +67,8 @@ void RUN::accelerate(int len, int finish_speed) {
   speed = min_speed = MIN_SPEED;
   max_speed = finish_speed;
   counterClear();
-  speedSet(MIN_SPEED,MIN_SPEED);
-  dirSet(MOT_FORWARD, MOT_FORWARD);  
+  speedSet(MIN_SPEED, MIN_SPEED);
+  dirSet(MOT_FORWARD, MOT_FORWARD);
   obj_step = (int)((float)len * 2.0 / PULSE);
   while (1) {
     stepGet();
@@ -86,7 +86,7 @@ void RUN::oneStep(int len, int init_speed) {
   max_speed = init_speed;
   speed = min_speed = init_speed;
   counterClear();
-  speedSet(init_speed,init_speed);   
+  speedSet(init_speed, init_speed);
   dirSet(MOT_FORWARD, MOT_FORWARD);
   obj_step = (int)((float)len * 2.0 / PULSE);
 
@@ -106,8 +106,8 @@ void RUN::decelerate(int len, int init_speed) {
   max_speed = init_speed;
   speed = min_speed = init_speed;
   counterClear();
-  speedSet(init_speed,init_speed);   
-  dirSet(MOT_FORWARD, MOT_FORWARD);  
+  speedSet(init_speed, init_speed);
+  dirSet(MOT_FORWARD, MOT_FORWARD);
   obj_step = (int)((float)len * 2.0 / PULSE);
 
   while (1) {
@@ -133,23 +133,22 @@ void RUN::decelerate(int len, int init_speed) {
 }
 
 
-void RUN::rotate(t_local_direction dir, int times)
-{
+void RUN::rotate(t_local_direction dir, int times) {
   int obj_step;
 
   accel = 1.5;
   max_speed = 350.0;
   speed = min_speed = MIN_SPEED;
   counterClear();
-  speedSet(MIN_SPEED,MIN_SPEED);   
+  speedSet(MIN_SPEED, MIN_SPEED);
   obj_step = (int)(TREAD_WIDTH * PI / 4.0 * (float)times * 2.0 / PULSE);
 
   switch (dir) {
     case right:
-      dirSet(MOT_FORWARD, MOT_BACK);    
+      dirSet(MOT_FORWARD, MOT_BACK);
       break;
     case left:
-      dirSet(MOT_BACK,MOT_FORWARD);
+      dirSet(MOT_BACK, MOT_FORWARD);
       break;
     default:
       dirSet(MOT_FORWARD, MOT_FORWARD);
@@ -159,7 +158,7 @@ void RUN::rotate(t_local_direction dir, int times)
   while (1) {
     stepGet();
     speedSet(speed, speed);
-    if ((int)((obj_step/2.0*PULSE) - step_lr_len) < (int)(((speed * speed) - (MIN_SPEED * MIN_SPEED)) / (2.0 * 1000.0 * accel))) {
+    if ((int)((obj_step / 2.0 * PULSE) - step_lr_len) < (int)(((speed * speed) - (MIN_SPEED * MIN_SPEED)) / (2.0 * 1000.0 * accel))) {
       break;
     }
   }
@@ -176,5 +175,4 @@ void RUN::rotate(t_local_direction dir, int times)
   }
 
   stop();
-
 }

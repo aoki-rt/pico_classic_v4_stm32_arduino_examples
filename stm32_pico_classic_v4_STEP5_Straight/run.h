@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ public:
   void decelerate(int len, int init_speed);
 
 private:
-  int step_lr_len,step_lr;
+  int step_lr_len, step_lr;
 };
 
 

@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -43,28 +43,28 @@ public:
   volatile float accel;
   volatile float speed;
   volatile float speed_target_r;
-  volatile float speed_target_l;  
+  volatile float speed_target_l;
   volatile float upper_speed_limit;
   volatile float lower_speed_limit;
 
-  t_control con_wall;  
+  t_control con_wall;
 
   RUN();
   void interrupt(void);
   void counterClear(void);
-  void straight(int len, int init_speed, int max_sp, int finish_speed);  
+  void straight(int len, int init_speed, int max_sp, int finish_speed);
   void accelerate(int len, int finish_speed);
   void oneStep(int len, int init_speed);
   void decelerate(int len, int init_speed);
-  void rotate(t_local_direction dir, int times);  
+  void rotate(t_local_direction dir, int times);
 
 private:
-  int step_lr_len,step_lr;
+  int step_lr_len, step_lr;
   void dirSet(t_CW_CCW dir_left, t_CW_CCW dir_right);
   void speedSet(float l_speed, float r_speed);
   void stepGet(void);
-  void stay(float l_speed);  
-  void stop(void);  
+  void stay(float l_speed);
+  void stop(void);
 };
 
 

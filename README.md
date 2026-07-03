@@ -1,8 +1,8 @@
 # pico_classic_v4_stm32_arduino_examples
-![pico_classic4](images/PiCo_Classic4_image.jpg)
+![pico_classic4](images/PiCo_Classic4_image.png)
 
 ## 動作環境
-- Arduino IDE v2.3.8
+- Arduino IDE v2.3.10
 - Arduino STM32 MCU based boardsESP32 v2.12.0
 
 ## サンプルプログラムについて

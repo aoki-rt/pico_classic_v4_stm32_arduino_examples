@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -30,12 +30,12 @@ typedef struct
 } t_sensor;
 
 
-class SENSOR{
+class SENSOR {
 public:
   SENSOR();
-	volatile t_sensor sen_r, sen_l, sen_fr, sen_fl;
-	volatile short battery_value;
-	void interrupt(void);
+  volatile t_sensor sen_r, sen_l, sen_fr, sen_fl;
+  volatile short battery_value;
+  void interrupt(void);
 };
 
 extern SENSOR g_sensor;

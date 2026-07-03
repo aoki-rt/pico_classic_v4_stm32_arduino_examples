@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,10 @@
 #ifndef SRC_RUN_H_
 #define SRC_RUN_H_
 
-typedef enum { front, right, left, rear } t_local_direction;
+typedef enum { front,
+               right,
+               left,
+               rear } t_local_direction;
 
 typedef enum {
   MOT_FORWARD = 1,  //TMC5240の方向に合わせた数字
@@ -45,7 +48,7 @@ public:
   void rotate(t_local_direction dir, int times);
 
 private:
-  int step_lr_len,step_lr;
+  int step_lr_len, step_lr;
 };
 
 

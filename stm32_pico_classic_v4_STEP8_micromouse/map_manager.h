@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -59,14 +59,14 @@ public:
   MapManager();
 
   t_position mypos;
-    unsigned char goal_mx, goal_my;
+  unsigned char goal_mx, goal_my;
 
   void axisUpdate(void);
   void rotateDirSet(t_local_direction dir);
   t_local_direction nextDirGet(unsigned char x, unsigned char y, t_global_direction *dir);
   t_local_direction nextDir2Get(unsigned char x, unsigned char y, t_global_direction *dir);
   void positionInit(void);
- unsigned int wallDataRawGet(unsigned char x, unsigned char y);  
+  unsigned int wallDataRawGet(unsigned char x, unsigned char y);
   void wallDataSet(unsigned char x, unsigned char y, t_global_direction dir, char data);
   char wallDataGet(unsigned char x, unsigned char y, t_global_direction dir);
   void wallSet(bool IS_SEN_FR, bool IS_SEN_R, bool IS_SEN_L);
@@ -78,8 +78,8 @@ private:
 
   void stepMapSet(unsigned char posX, unsigned char posY, t_global_direction l_global_dir, int *little, t_global_direction *now_dir, int *priority);
   t_local_direction nextGdir(t_global_direction *p_global_dir);
-  void searchMapMake(unsigned char  x, unsigned char  y);
-  void map2Make(unsigned char  x, unsigned char  y);
+  void searchMapMake(unsigned char x, unsigned char y);
+  void map2Make(unsigned char x, unsigned char y);
   int priorityGet(unsigned char x, unsigned char y, t_global_direction dir);
 };
 

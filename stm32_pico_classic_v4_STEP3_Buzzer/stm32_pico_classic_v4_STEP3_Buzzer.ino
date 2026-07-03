@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ void modeExec(char mode) {
       break;
     case 2:
       analogWriteFrequency(FREQ_D);
-      analogWrite(BUZZER, 127);      
+      analogWrite(BUZZER, 127);
       delay(1000);
       analogWrite(BUZZER, 255);
       break;

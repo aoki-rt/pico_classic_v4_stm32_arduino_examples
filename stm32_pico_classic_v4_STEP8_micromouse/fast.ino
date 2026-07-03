@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -45,17 +45,17 @@ void FAST::run(char gx, char gy) {
         straight_count++;
         break;
       case right:
-        if(straight_count>0){
+        if (straight_count > 0) {
           g_run.straight(straight_count * SECTION, SEARCH_SPEED, MAX_SPEED, SEARCH_SPEED);
           straight_count = 0;
         }
-        g_run.decelerate(HALF_SECTION,SEARCH_SPEED);
+        g_run.decelerate(HALF_SECTION, SEARCH_SPEED);
         g_run.rotate(right, 1);
         g_run.accelerate(HALF_SECTION, SEARCH_SPEED);
         break;
       case left:
-        if(straight_count>0){
-          g_run.straight(straight_count * SECTION,SEARCH_SPEED,MAX_SPEED, SEARCH_SPEED);
+        if (straight_count > 0) {
+          g_run.straight(straight_count * SECTION, SEARCH_SPEED, MAX_SPEED, SEARCH_SPEED);
           straight_count = 0;
         }
         g_run.decelerate(HALF_SECTION, SEARCH_SPEED);

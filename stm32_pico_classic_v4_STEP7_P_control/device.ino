@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
 // limitations under the License.
 
 
-uint16_t RTanalogRead(uint32_t ulPin){
+uint16_t RTanalogRead(uint32_t ulPin) {
   ADC_HandleTypeDef AdcHandle = {};
   ADC_ChannelConfTypeDef AdcChannelConf = {};
   __IO uint16_t uhADCxConvertedValue = 0;

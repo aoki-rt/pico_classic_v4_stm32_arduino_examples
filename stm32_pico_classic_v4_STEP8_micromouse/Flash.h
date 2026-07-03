@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 #ifndef SRC_FLASH_H_
 #define SRC_FLASH_H_
 
-#define MAP_ADD	     0x803F800
-#define MAP_PAGE     127
+#define MAP_ADD 0x803F800
+#define MAP_PAGE 127
 
 #endif /* SRC_FLASH_H_ */

@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,8 +20,8 @@
 class MISC {
 
 public:
-  unsigned char mode_select;  
-  void modeExec(int mode);
+	unsigned char mode_select;
+	void modeExec(int mode);
 	short buttonInc(short _data, short limit, short limit_data);
 	short buttonDec(short _data, short limit, short limit_data);
 	void buttonOk(void);

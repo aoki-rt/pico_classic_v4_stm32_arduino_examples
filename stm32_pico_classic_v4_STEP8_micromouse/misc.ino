@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,8 +17,7 @@
 
 MISC g_misc;
 
-short MISC::buttonInc(short data, short limit, short limit_data)
-{
+short MISC::buttonInc(short data, short limit, short limit_data) {
   data++;
   if (data > limit) {
     data = limit_data;
@@ -28,8 +27,7 @@ short MISC::buttonInc(short data, short limit, short limit_data)
   buzzerDisable();
   return data;
 }
-short MISC::buttonDec(short data, short limit, short limit_data)
-{
+short MISC::buttonDec(short data, short limit, short limit_data) {
   data--;
   if (data < limit) {
     data = limit_data;
@@ -40,8 +38,7 @@ short MISC::buttonDec(short data, short limit, short limit_data)
   return data;
 }
 
-void MISC::buttonOk(void)
-{
+void MISC::buttonOk(void) {
   buzzerEnable(DEC_FREQ);
   delay(80);
   buzzerEnable(INC_FREQ);
@@ -79,8 +76,7 @@ void MISC::goalAppeal(void)  //ゴールしたことをアピールする
 }
 
 
-void MISC::modeExec(int mode)
-{
+void MISC::modeExec(int mode) {
   motorEnable();
   delay(1000);
 
@@ -145,4 +141,3 @@ void MISC::modeExec(int mode)
   }
   motorDisable();
 }
-

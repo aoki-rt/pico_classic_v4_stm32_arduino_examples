@@ -1,4 +1,4 @@
-// Copyright 2025 RT Corporation
+// Copyright 2026 RT Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 #include "run.h"
 
 HardwareTimer *Timer6 = new HardwareTimer(TIM6);
-SPIClass SPI_2(PB15,PB14,PB13);//MOSI,MISO,SCLK,CS(option)
+SPIClass SPI_2(PB15, PB14, PB13);  //MOSI,MISO,SCLK,CS(option)
 
 #define LED0 PB10
 #define LED1 PB1
@@ -33,9 +33,9 @@ SPIClass SPI_2(PB15,PB14,PB13);//MOSI,MISO,SCLK,CS(option)
 #define SPI_CLK PB13
 #define SPI_MOSI PB15
 #define SPI_MISO PB14
-#define SPI_CS_L PB12   //左モータ
+#define SPI_CS_L PB12  //左モータ
 #define SPI_CS_R PB7   //右モータ
-#define SPI_CS_J PB9  //ジャイロ
+#define SPI_CS_J PB9   //ジャイロ
 
 #define TIRE_DIAMETER (48.00)
 #define PULSE TMC5240_PULSE
@@ -67,7 +67,6 @@ void setup() {
   delay(1);
   g_tmc5240.init();
   digitalWrite(MOTOR_EN, HIGH);
-
 }
 
 void loop() {
